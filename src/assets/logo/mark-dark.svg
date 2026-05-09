@@ -1,0 +1,11 @@
+<!-- WAR ROOM — "The Apex W" mark, dark monochrome (for light backgrounds) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <polyline
+    points="7,10 15,38 24,18 33,38 41,10"
+    fill="none"
+    stroke="#0F172A"
+    stroke-width="6.5"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+</svg>

@@ -1,0 +1,34 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        "profile": {
+          ".read": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('profile').child('role').val() === 'teacher' || root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin')",
+          ".write": "auth != null && auth.uid === $uid",
+          "role": {
+            ".write": "auth != null && root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin' && auth.uid !== $uid"
+          }
+        },
+        "snapshot": {
+          ".read": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin')",
+          ".write": "auth != null && auth.uid === $uid"
+        }
+      }
+    },
+    "classes": {
+      "$classCode": {
+        ".read": "auth != null && (root.child('classes').child($classCode).child('teacherUid').val() === auth.uid || root.child('classes').child($classCode).child('students').child(auth.uid).exists() || root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin')",
+        ".write": "auth != null && (root.child('classes').child($classCode).child('teacherUid').val() === auth.uid || root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin')",
+        "students": {
+          "$studentUid": {
+            ".read": "auth != null && auth.uid === $studentUid"
+          }
+        }
+      }
+    },
+    "adminLogs": {
+      ".read": "auth != null && root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin'",
+      ".write": "auth != null && root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin'"
+    }
+  }
+}

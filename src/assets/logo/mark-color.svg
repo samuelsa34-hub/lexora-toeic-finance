@@ -1,0 +1,27 @@
+<!-- WAR ROOM — "The Apex W" mark, color version (48×48) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E152B"/>
+      <stop offset="100%" stop-color="#060B14"/>
+    </linearGradient>
+    <linearGradient id="mk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="50%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#C4B5FD"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="11" fill="url(#bg)"/>
+  <!-- Subtle inner glow ring -->
+  <rect width="48" height="48" rx="11" fill="none"
+        stroke="rgba(130,140,248,0.12)" stroke-width="1"/>
+  <!-- The Apex W mark -->
+  <polyline
+    points="7,10 15,38 24,18 33,38 41,10"
+    fill="none"
+    stroke="url(#mk)"
+    stroke-width="6.5"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+</svg>
